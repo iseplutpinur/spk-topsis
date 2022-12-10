@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2022 at 07:20 AM
+-- Generation Time: Dec 10, 2022 at 11:03 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,6 +28,13 @@ CREATE TABLE `admin` (
   `level` varchar(10) NOT NULL,
   `namalengkap` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`idadmin`, `username`, `password`, `level`, `namalengkap`) VALUES
+(1, 'admin', 'admin', 'admin', 'Administrator');
 
 -- --------------------------------------------------------
 
@@ -139,14 +146,14 @@ INSERT INTO `nilai_matrik` (`id_matrik`, `id_alternatif`, `id_kriteria`, `nilai`
 (66, 'A2', 'C2', 4),
 (67, 'A2', 'C3', 0),
 (68, 'A2', 'C4', 0),
-(69, 'A10', 'C1', 1),
-(70, 'A10', 'C2', 0),
-(71, 'A10', 'C3', 0),
-(72, 'A10', 'C4', 0),
-(117, 'A1', 'C1', 10),
-(118, 'A1', 'C2', 2),
-(119, 'A1', 'C3', 3),
-(120, 'A1', 'C4', 5);
+(121, 'A1', 'C1', 3),
+(122, 'A1', 'C2', 2),
+(123, 'A1', 'C3', 3),
+(124, 'A1', 'C4', 5),
+(129, 'A10', 'C1', 1),
+(130, 'A10', 'C2', 0),
+(131, 'A10', 'C3', 0),
+(132, 'A10', 'C4', 0);
 
 -- --------------------------------------------------------
 
@@ -195,11 +202,11 @@ ALTER TABLE `nilai_matrik`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `idadmin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idadmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nilai_matrik`
 --
 ALTER TABLE `nilai_matrik`
-  MODIFY `id_matrik` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id_matrik` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 COMMIT;

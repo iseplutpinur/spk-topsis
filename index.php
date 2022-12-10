@@ -1,3 +1,25 @@
+<?php
+session_start();
+include("konfig/koneksi.php");
+// cek login
+if (isset($_SESSION['auth'])) {
+  $user = $_SESSION['auth']['username'];
+  $pass = $_SESSION['auth']['password'];
+  $s = mysqli_query($conn, "SELECT * FROM admin WHERE username='$user' AND password='$pass'");
+  $user = mysqli_fetch_assoc($s);
+  $row = mysqli_num_rows($s);
+  if ($row) {
+    $_SESSION['auth'] = $user;
+  } else {
+    header("Location: ./logout.php");
+  }
+} else {
+  header("Location: ./logout.php");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,10 +54,8 @@
     </ul>
 	-->
 
-
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
       </ul>
     </div>
   </nav>

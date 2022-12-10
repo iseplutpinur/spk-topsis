@@ -1,5 +1,4 @@
 <?php
-include("konfig/koneksi.php");
 $s = mysqli_query($conn, "select * from kriteria");
 $h = mysqli_num_rows($s);
 
