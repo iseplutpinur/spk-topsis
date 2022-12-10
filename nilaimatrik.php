@@ -53,7 +53,7 @@ if (isset($_POST['simpan'])) {
 				<option value="" selected>Pilih Alternatif</option>
 				<?php
 				$alternatif = isset($_GET['alternatif']) ? $_GET['alternatif'] : '';
-				$s = mysqli_query($conn, "select * from alternatif");
+				$s = mysqli_query($conn, "select * from alternatif order by CONVERT(REPLACE(id_alternatif, 'A', ''), SIGNED)");
 				while ($d = mysqli_fetch_assoc($s)) {
 				?>
 
