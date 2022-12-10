@@ -61,12 +61,13 @@
     $active3 = '';
     $active4 = 'class="active"';
   } else {
-    $active1 = '';
+    $active1 = 'class="active"';
     $active2 = '';
     $active3 = '';
     $active4 = '';
+    $_GET['a'] = 'kriteria';
+    $_GET['k'] = 'kriteria';
   }
-
   ?>
 
   <!-- TAB KIRI -->
